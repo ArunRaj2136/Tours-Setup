@@ -13,8 +13,8 @@ function App() {
 
     try {
       const response = await fetch(url);
-      const tours = await response.json();
-      setTours(tours);
+      const data = await response.json();
+      setTours(data);
       setloading(false);
     } catch (err) {
       console.log(err);
@@ -35,7 +35,7 @@ function App() {
   } else {
     return (
       <main>
-        <Tours />;
+        <Tours tourData={tours} />;
       </main>
     );
   }
